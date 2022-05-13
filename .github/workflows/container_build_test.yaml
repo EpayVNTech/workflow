@@ -1,0 +1,11 @@
+on:
+  push:
+    branches-ignore:
+      - "*"
+name: Container build test workflow
+jobs:
+  deploy:
+    name: Test choosing runner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
