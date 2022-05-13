@@ -2,6 +2,8 @@ on:
   push:
     branches:
       - develop
+  workflow_call:
+
 name: Container build test workflow
 jobs:
   build-container:
