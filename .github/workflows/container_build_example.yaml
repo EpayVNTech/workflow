@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  pass-secrets-to-workflow:
+    name: Build and push container
+    secrets: inherit
+    uses: EpayVNTech/workflow/.github/workflows/template/container_build.yaml@develop
