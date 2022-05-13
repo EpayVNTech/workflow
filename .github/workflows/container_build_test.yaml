@@ -5,7 +5,7 @@ on:
 name: Container build test workflow
 jobs:
   build-container:
-    name: Test choosing runner
+    name: Build test container and upload to container registry
     runs-on: ubuntu-latest
     env:
       SVC_NAME: ${{ secrets.SERVICE_NAME }}

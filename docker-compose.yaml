@@ -4,4 +4,4 @@ services:
   adminer:
     build: .
     ports:
-      - "80:80"
+      - "18080:8080"
