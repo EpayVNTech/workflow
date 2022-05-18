@@ -10,7 +10,7 @@ jobs:
     outputs:
       version:  ${{ steps.setVersion.outputs.version }}
     env:
-      SVC_NAME: bnpl-svc
+      SVC_NAME: ${{ secrets.SERVICE_NAME }}
       ACR_NAME: ${{ secrets.CONTAINER_REGISTRY_HOST }}
 
     steps:
