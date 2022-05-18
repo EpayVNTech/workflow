@@ -3,6 +3,7 @@ on:
     branches:
       - release
 
+
 jobs:
   build-container:
     name: Build and push container
