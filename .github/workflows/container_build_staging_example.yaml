@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build-container:
+    name: Build and push container
+    secrets: inherit
+    uses: EpayVNTech/workflow/.github/workflows/container_build_staging.yaml@develop
