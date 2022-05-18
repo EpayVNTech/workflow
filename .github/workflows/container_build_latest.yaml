@@ -1,7 +1,7 @@
 on:
   workflow_call:
 
-name: Container build test workflow
+name: Build tag latest for container
 jobs:
   build-container:
     name: Build test container and upload to container registry
