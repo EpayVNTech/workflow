@@ -8,7 +8,7 @@ jobs:
     name: Build and Publish to Azure Container Registry
     runs-on: ubuntu-latest
     outputs:
-      version:  ${{ steps.setVersion.outputs.version }}
+      version: ${{ steps.setVersion.outputs.version }}
     env:
       SVC_NAME: ${{ secrets.SERVICE_NAME }}
       ACR_NAME: ${{ secrets.CONTAINER_REGISTRY_HOST }}
@@ -28,7 +28,7 @@ jobs:
       - name: Bump version
         uses: anothrNick/github-tag-action@1.26.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: release
@@ -44,7 +44,7 @@ jobs:
 
       - name: Set version staging
         id: setVersion
-        run : echo "::set-output name=version::${{ env.TAG }}"
+        run: echo "::set-output name=version::${{ env.TAG }}"
 
   # deploy:
   #   name: Deploy to AWS K8s cluster
